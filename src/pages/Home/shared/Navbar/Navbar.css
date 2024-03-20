@@ -22,11 +22,10 @@
 }
 
 .nav__logo {
-  color: var(--first-color);
+  color: white;
   transition: color 0.4s;
   font-size: var(--h2-font-size);
   font-family: var(--second-font);
-  
 }
 
 a {
