@@ -7,13 +7,9 @@ export default function RootLayout() {
     return (
         <div style={{ position: "relative" }}>
             <Navbar />
-
-            <div className="" style={{
-                marginTop: '5rem'
-            }}>
-                <Outlet />
+            <div className="outlet-container">
+              <Outlet />
             </div>
-
             <Footer />
         </div>
     )

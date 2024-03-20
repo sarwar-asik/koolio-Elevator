@@ -8,12 +8,12 @@ export default function Footer() {
                     <h2>Start with Koolio today.</h2>
                     <button>
                         <p>Sign up free</p>
-                        <span className="material-symbols-outlined"> trending_flat </span>
+
                     </button>
                 </article>
 
                 <section className="top">
-                    <img src="https://raw.githubusercontent.com/frontend-joe/css-footers/da46d1947acfcfb6f2ad9ee5c69d642f93920923/footer-3/logo.svg" />
+                 
                     <ul>
                         <li>
                             <h3>Resources</h3>

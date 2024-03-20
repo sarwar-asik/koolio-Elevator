@@ -12,3 +12,7 @@
   --z-tooltip: 10;
   --z-fixed: 100;
 }
+
+.outlet-container {
+  margin-top: 5rem;
+}
