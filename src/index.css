@@ -16,3 +16,38 @@
 .outlet-container {
   margin-top: 5rem;
 }
+
+/* ! for reusble elevator button  */
+.elevator-button {
+  border: 2px solid black;
+  border-top: 0px;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: white;
+  text-align: center;
+  border-radius: 2px;
+  width: 15rem;
+  margin-inline: auto;
+}
+
+.elevator-card {
+  min-height: 28rem;
+  text-align: center;
+  border: 2px solid black;
+  width: 80%;
+}
+
+.button-section {
+  width: 20%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.arrow-button {
+  font-size: 4rem;
+  color: rgb(31, 35, 39);
+  /* background-color: #2663ff; */
+}

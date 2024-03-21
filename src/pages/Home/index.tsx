@@ -1,11 +1,11 @@
-import Elevator from "./Elevator";
+import ElevatorMainPage from "./Elevator";
+import "./style/home.css";
 
 
 export default function HomePage() {
     return (
-        <div>
-            <h2 > HomePage</h2>
-            <Elevator />
+        <div className="home-container">
+            <ElevatorMainPage />
         </div>
     )
 }
