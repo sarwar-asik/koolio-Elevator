@@ -1,10 +1,32 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-import LevelButton from '../../../../components/UI/LevelButton'
-import UpArrowButton from '../../../../components/UI/UpArrowButton'
-import { IElevator } from '../../../../types/elevator'
+import DownArrowButton from '../../../../components/UI/DownArrowButton';
+import LevelButton from '../../../../components/UI/LevelButton';
+import UpArrowButton from '../../../../components/UI/UpArrowButton';
+import { IElevator } from '../../../../types/elevator';
 
-export default function ElevatorCard({ elevator }: { elevator: IElevator }) {
-    console.log(elevator, 'elevator data')
+type IButtonHandler = {
+    type: "up" | 'down';
+    no: number;
+    title: string;
+};
+
+export default function ElevatorCard({ elevator, currentElevator, setCurrentElevator }: { elevator: IElevator, currentElevator: IButtonHandler, setCurrentElevator: any }) {
+    // const [currentElevator, setCurrentElevator] = useState<IButtonHandler>({ no: 2, title: 'Level 2', type: 'down' });
+
+
+    const buttonHandler = (data: IButtonHandler) => {
+
+        setCurrentElevator(data);
+        console.log(currentElevator.title, 'and', elevator.title)
+        // if (currentElevator.title !== elevator.title) {
+
+        // }
+
+    };
+
+    // console.log('current', currentElevator, 'exist', elevator.no)
+
     return (
         <div className="" style={{
             display: "flex",
@@ -12,13 +34,42 @@ export default function ElevatorCard({ elevator }: { elevator: IElevator }) {
             alignItems: "center"
         }}>
             <div className="button-section">
-                <UpArrowButton />
-
+                {elevator.no === 2 && (
+                    <div onClick={() => buttonHandler({ no: 1, title: elevator.title, type: "down" })}>
+                        <DownArrowButton style={{ color: currentElevator?.no === 1 && currentElevator?.type === 'down' ? "green" : "" }} />
+                    </div>
+                )}
+                {elevator.no === 1 && (
+                    <>
+                        <div onClick={() => buttonHandler({ no: 2, title: elevator.title, type: "up" })}>
+                            <UpArrowButton style={{ color: currentElevator?.no === 2 && currentElevator?.type === 'up' ? "green" : "" }} />
+                        </div>
+                        <div onClick={() => buttonHandler({ no: 0, title: elevator.title, type: "down" })}>
+                            <DownArrowButton style={{ color: currentElevator?.no === 0 && currentElevator?.type === 'down' ? "green" : "" }} />
+                        </div>
+                    </>
+                )}
+                {elevator.no === 0 && (
+                    <div onClick={() => buttonHandler({ no: 1, title: elevator.title, type: "up" })}>
+                        <UpArrowButton style={{ color: currentElevator?.no === 1 && currentElevator?.type === 'up' ? "green" : "" }} />
+                    </div>
+                )}
             </div>
-
-            <div className='elevator-card' >
-                <LevelButton>{elevator?.title}</LevelButton>
+            <div className='elevator-card'>
+                <LevelButton>{elevator.title}</LevelButton>
+                {/* active elevator ui section */}
+                {currentElevator.no === elevator.no && (
+                    <div className="active-elevator" style={{
+                        // background: '#9D5E3D',
+                        minHeight: '15rem',
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center"
+                    }}>
+                        <h6 className='elevator-text'>Elevator</h6>
+                    </div>
+                )}
             </div>
         </div>
-    )
+    );
 }
