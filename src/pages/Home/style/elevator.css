@@ -9,7 +9,8 @@
 
 @media (min-width: 768px) {
   .main-elevator {
-    width: 50%;
+    width: 48%;
     max-width: none;
+    margin: 5rem auto;
   }
 }

@@ -1,3 +1,4 @@
+/* my root reusable style of css */
 :root {
   --header-height: 2rem;
   --first-color: #2663ff;
@@ -51,7 +52,7 @@
 }
 
 .arrow-button {
-  font-size: 4rem;
+  font-size: 5rem;
   color: rgb(31, 35, 39);
   /* background-color: #2663ff; */
   cursor: pointer;
@@ -68,14 +69,17 @@
   border: 2px solid black;
   margin-top: 0px;
   border-top: 0px;
+  border-radius: 3px;
 }
 
+/* elevator text style */
 .elevator-text {
   background-color: #feeacd;
   padding: 1rem;
   font-size: 16px;
   color: black;
-  width: 3rem;
+  width: 4rem;
   margin-inline: auto;
+  font: 16px;
   border-radius: 6px;
 }

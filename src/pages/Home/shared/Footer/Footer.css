@@ -8,6 +8,7 @@ footer {
   color: #f9f9f9;
 }
 
+/* footer top section  */
 footer article {
   display: flex;
   flex-direction: column;
@@ -40,6 +41,8 @@ footer article button {
   font-size: 16px;
 }
 
+/* footer sections */
+
 footer section {
   padding: 0 50px;
 }
@@ -55,6 +58,7 @@ section.top-section img {
   margin: 0 0 30px;
 }
 
+/* ul section */
 section.top-section ul {
   list-style: none;
   padding: 0;
@@ -64,6 +68,7 @@ section.top-section ul {
   grid-template-columns: repeat(2, 1fr);
 }
 
+/* responsove footer sections */
 @media (width > 480px) {
   footer article button {
     width: 70%;

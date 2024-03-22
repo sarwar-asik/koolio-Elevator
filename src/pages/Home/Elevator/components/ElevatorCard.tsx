@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { IButtonHandler } from '..';
+import { useState } from 'react';
+import { IButtonHandler } from '../ElevatorMainPage';
 import DownArrowButton from '../../../../components/UI/DownArrowButton';
 import LevelButton from '../../../../components/UI/LevelButton';
 import UpArrowButton from '../../../../components/UI/UpArrowButton';
@@ -14,18 +15,45 @@ import { IElevator } from '../../../../types/elevator';
 export default function ElevatorCard({ elevator, currentElevator, setCurrentElevator }: { elevator: IElevator, currentElevator: IButtonHandler, setCurrentElevator: any }) {
 
 
+    const [loading, setLoading] = useState<boolean>(false)
+    const [delay, setDelay] = useState<number>(0)
+
+    // let delay = 0;
     // button handler of side arrow icons
     const buttonHandler = (data: IButtonHandler) => {
 
         // console.log(currentElevator.title, 'and', elevator.title)
-        // reusable sound play function
-        // ! condition for correct or wrong select
-        if (currentElevator.title !== elevator.title) {
-            setCurrentElevator(data);
-            playAudioSound("correct")
-        } else {
-            playAudioSound("incorrect")
+
+
+        setLoading(true)
+
+        // console.log(data.currentLevel, 'no:', data.no)
+        //! the delay time for level-0 to level-1 && level-2 to level 1
+        if ((data.currentLevel === 0 && data.no === 1) || (data.currentLevel === 2 && data.no === 1)) {
+            setDelay(5000)
         }
+        //! the delay time for level-1 to level-2 && level-1 to level 0
+        else if ((data.currentLevel === 1 && data.no === 2) || (data.currentLevel === 1 && data.no === 0)) {
+            setDelay(10000)
+        }
+
+        setTimeout(() => {
+            // ! condition for correct or wrong select
+            if (currentElevator.title !== elevator.title) {
+                setCurrentElevator(data);
+                // ! reusable sound play function
+                playAudioSound("correct");
+                setLoading(false)
+            }
+        }, delay);
+
+        if (currentElevator.title === elevator.title) {
+            // ! reusable sound play function
+            playAudioSound("incorrect");
+            setLoading(false)
+
+        }
+
 
     };
 
@@ -42,19 +70,28 @@ export default function ElevatorCard({ elevator, currentElevator, setCurrentElev
 
                 {/* //! top or level-2  arrow button with condition */}
                 {elevator.no === 2 && (
-                    <div onClick={() => buttonHandler({ no: 1, title: elevator.title, type: "down" })}>
+                    <div onClick={() => buttonHandler({ no: 1, title: elevator.title, type: "down", currentLevel: 2 })}>
                         <DownArrowButton style={{ color: currentElevator?.no === 1 && currentElevator?.type === 'down' ? "green" : "#969494" }} />
+
+                        {loading && <h5>Moving.... in {delay / 1000}s</h5>
+                        }
                     </div>
                 )}
 
                 {/* //! middle or level-1  arrow and down button with condition */}
                 {elevator.no === 1 && (
                     <>
-                        <div onClick={() => buttonHandler({ no: 2, title: elevator.title, type: "up" })}>
+                        <div onClick={() => buttonHandler({ no: 2, title: elevator.title, type: "up", currentLevel: 1 })}>
+
+
                             {/* //! up button */}
+
                             <UpArrowButton style={{ color: currentElevator?.no === 2 && currentElevator?.type === 'up' ? "green" : "#969494" }} />
+
                         </div>
-                        <div onClick={() => buttonHandler({ no: 0, title: elevator.title, type: "down" })}>
+                        {loading && <h5> Moving.... in {delay / 1000}s</h5>
+                        }
+                        <div onClick={() => buttonHandler({ no: 0, title: elevator.title, type: "down", currentLevel: 1 })}>
                             {/* //! down button */}
                             <DownArrowButton style={{ color: currentElevator?.no === 0 && currentElevator?.type === 'down' ? "green" : "#969494" }} />
                         </div>
@@ -62,10 +99,13 @@ export default function ElevatorCard({ elevator, currentElevator, setCurrentElev
                 )}
                 {/* //! bottom or level-0 / Ground  arrow button with condition */}
                 {elevator.no === 0 && (
-                    <div onClick={() => buttonHandler({ no: 1, title: elevator.title, type: "up" })}>
+                    <div onClick={() => buttonHandler({ no: 1, title: elevator.title, type: "up", currentLevel: 0 })}>
+                        {loading && <h5> Moving.... in {delay / 1000}s</h5>
+                        }
                         <UpArrowButton style={{ color: currentElevator?.no === 1 && currentElevator?.type === 'up' ? "green" : "#969494" }} />
                     </div>
                 )}
+
             </div>
 
             {/* //! active elevator sections */}

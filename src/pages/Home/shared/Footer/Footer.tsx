@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom"
-import "./Footer.css"
+import { Link } from "react-router-dom";
+import "./Footer.css";
 
 export default function Footer() {
     return (
         <div>
             <footer>
+                {/* footer top sections */}
                 <article>
                     <h2>Start with Koolio today.</h2>
                     <button>
@@ -17,37 +18,37 @@ export default function Footer() {
 
                     <ul>
                         <li>
-                            <h3>Resources</h3>
-                            <Link to='/'>Usage</Link>
-                            <Link to='/'>Docs</Link>
-                            <Link to='/'>Support</Link>
-                            <Link to='/'>Hardware</Link>
+                            <h3>Discover</h3>
+                            <Link to='/'>Editor's Choice</Link>
+                            <Link to='/'>Elevator Move</Link>
+                            <Link to='/'>Sound Effect</Link>
+                            <Link to='/'>Smart Icon</Link>
                         </li>
                         <li>
-                            <h3>Pricing</h3>
-                            <Link to='/'>Overview</Link>
-                            <Link to='/'>Flexible Data</Link>
-                            <Link to='/'>High Volume</Link>
+                            <h3>Community</h3>
+                            <Link to='/'>Blog</Link>
+                            <Link to='/'>Creators </Link>
+                            <Link to='/'>Cameras</Link>
                             <Link to='/'>Enterprise</Link>
                         </li>
                         <li>
-                            <h3>Developers</h3>
-                            <Link to='/'>Forum</Link>
-                            <Link to='/'>Projects</Link>
-                            <Link to='/'>Open Source</Link>
-                            <Link to='/'>GitHub</Link>
+                            <h3>About</h3>
+                            <Link to='/'>About us</Link>
+                            <Link to='/'>FAQs</Link>
+                            <Link to='/'>Cookies Policy</Link>
+                            <Link to='/'>API</Link>
                         </li>
                         <li>
-                            <h3>Company</h3>
-                            <Link to='/'>About Us</Link>
-                            <Link to='/'>Blog</Link>
-                            <Link to='/'>Partnerships</Link>
-                            <Link to='/'>Careers</Link>
+                            <h3>Discover</h3>
+                            <Link to='/'>Popular Element </Link>
+                            <Link to='/'>Upcoming Elevator</Link>
+                            <Link to='/'>Audio Quality</Link>
+                            <Link to='/'>Careers </Link>
                         </li>
                     </ul>
                 </section>
 
-                <section className="bottom-section">© 2024 sarwar</section>
+                <section className="bottom-section">&copy;  sarwar 2024</section>
             </footer>
 
         </div>

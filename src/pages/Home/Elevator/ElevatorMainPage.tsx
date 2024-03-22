@@ -28,11 +28,12 @@ export type IButtonHandler = {
     type: "up" | 'down';
     no: number;
     title: string;
+    currentLevel: number
 };
 export default function ElevatorMainPage() {
 
     // ! state for handle elevator move in boxes 
-    const [currentElevator, setCurrentElevator] = useState<IButtonHandler>({ no: 2, title: 'Level 2', type: 'down' });   ///! here, given level-2 as default
+    const [currentElevator, setCurrentElevator] = useState<IButtonHandler>({ no: 2, title: 'Levels 2', type: 'down', currentLevel: 2 });   ///! here, given level-2 as default
 
 
     return (

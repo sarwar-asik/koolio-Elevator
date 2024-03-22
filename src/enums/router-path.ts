@@ -1,6 +1,6 @@
 const MAIN_ROUTE = {
   ROOT: "/",
-  ALL: "*",
+  ALL: "*", //for error handling
 };
 
 export const ROUTER_PATH = { ...MAIN_ROUTE }; ////! used for every router of different layout
