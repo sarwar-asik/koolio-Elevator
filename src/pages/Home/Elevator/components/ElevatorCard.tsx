@@ -36,22 +36,22 @@ export default function ElevatorCard({ elevator, currentElevator, setCurrentElev
             <div className="button-section">
                 {elevator.no === 2 && (
                     <div onClick={() => buttonHandler({ no: 1, title: elevator.title, type: "down" })}>
-                        <DownArrowButton style={{ color: currentElevator?.no === 1 && currentElevator?.type === 'down' ? "green" : "" }} />
+                        <DownArrowButton style={{ color: currentElevator?.no === 1 && currentElevator?.type === 'down' ? "green" : "#969494" }} />
                     </div>
                 )}
                 {elevator.no === 1 && (
                     <>
                         <div onClick={() => buttonHandler({ no: 2, title: elevator.title, type: "up" })}>
-                            <UpArrowButton style={{ color: currentElevator?.no === 2 && currentElevator?.type === 'up' ? "green" : "" }} />
+                            <UpArrowButton style={{ color: currentElevator?.no === 2 && currentElevator?.type === 'up' ? "green" : "#969494" }} />
                         </div>
                         <div onClick={() => buttonHandler({ no: 0, title: elevator.title, type: "down" })}>
-                            <DownArrowButton style={{ color: currentElevator?.no === 0 && currentElevator?.type === 'down' ? "green" : "" }} />
+                            <DownArrowButton style={{ color: currentElevator?.no === 0 && currentElevator?.type === 'down' ? "green" : "#969494" }} />
                         </div>
                     </>
                 )}
                 {elevator.no === 0 && (
                     <div onClick={() => buttonHandler({ no: 1, title: elevator.title, type: "up" })}>
-                        <UpArrowButton style={{ color: currentElevator?.no === 1 && currentElevator?.type === 'up' ? "green" : "" }} />
+                        <UpArrowButton style={{ color: currentElevator?.no === 1 && currentElevator?.type === 'up' ? "green" : "#969494" }} />
                     </div>
                 )}
             </div>
@@ -61,10 +61,7 @@ export default function ElevatorCard({ elevator, currentElevator, setCurrentElev
                 {currentElevator.no === elevator.no && (
                     <div className="active-elevator" style={{
                         // background: '#9D5E3D',
-                        minHeight: '15rem',
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center"
+                       
                     }}>
                         <h6 className='elevator-text'>Elevator</h6>
                     </div>
