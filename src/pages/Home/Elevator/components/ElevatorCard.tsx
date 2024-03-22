@@ -16,7 +16,7 @@ export default function ElevatorCard({ elevator, currentElevator, setCurrentElev
 
 
     const [loading, setLoading] = useState<boolean>(false)
-    const [delay, setDelay] = useState<number>(0)
+    const [delay, setDelay] = useState<number>(5000)
 
     // let delay = 0;
     // button handler of side arrow icons
