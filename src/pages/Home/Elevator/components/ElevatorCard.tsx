@@ -3,6 +3,8 @@
 import DownArrowButton from '../../../../components/UI/DownArrowButton';
 import LevelButton from '../../../../components/UI/LevelButton';
 import UpArrowButton from '../../../../components/UI/UpArrowButton';
+import playAudioSound from '../../../../hooks/playSound';
+
 import { IElevator } from '../../../../types/elevator';
 
 type IButtonHandler = {
@@ -19,6 +21,8 @@ export default function ElevatorCard({ elevator, currentElevator, setCurrentElev
 
         setCurrentElevator(data);
         console.log(currentElevator.title, 'and', elevator.title)
+
+        playAudioSound()
         // if (currentElevator.title !== elevator.title) {
 
         // }
@@ -61,7 +65,7 @@ export default function ElevatorCard({ elevator, currentElevator, setCurrentElev
                 {currentElevator.no === elevator.no && (
                     <div className="active-elevator" style={{
                         // background: '#9D5E3D',
-                       
+
                     }}>
                         <h6 className='elevator-text'>Elevator</h6>
                     </div>
