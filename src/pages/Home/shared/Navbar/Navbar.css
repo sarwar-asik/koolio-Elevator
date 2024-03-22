@@ -1,6 +1,6 @@
 /* Navbar.css */
 
-.header {
+.nav-header {
   position: fixed;
   width: 100%;
   top: 0;
@@ -21,6 +21,7 @@
   margin: 1rem;
 }
 
+/* rgith sights logo of nav */
 .nav__logo {
   color: white;
   transition: color 0.4s;
@@ -62,12 +63,14 @@ a {
     transition: right 0.4s;
   }
 }
+
+/* responsive of nav_menu and lists */
 @media screen and (max-width: 300px) {
   .nav__menu {
     padding: 4rem 1rem 2rem;
   }
 
-  .nav__list {
+  .nav__lists {
     row-gap: 1rem;
   }
 
@@ -85,7 +88,7 @@ a {
   }
 }
 
-.nav__list {
+.nav__lists {
   display: flex;
   flex-direction: column;
   row-gap: 2.5rem;
@@ -111,7 +114,7 @@ a {
 .show-menu {
   right: 0;
 }
-.nav__listt {
+.nav__listst {
   display: flex;
   flex-direction: row;
   column-gap: 2.5rem;
@@ -138,7 +141,7 @@ a {
     display: none;
   }
 
-  .nav__list {
+  .nav__lists {
     flex-direction: row;
     column-gap: 2.5rem;
   }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./Footer.css"
 
 export default function Footer() {
@@ -7,46 +8,46 @@ export default function Footer() {
                 <article>
                     <h2>Start with Koolio today.</h2>
                     <button>
-                        <p>Sign up free</p>
+                        <p>Sign up Now</p>
 
                     </button>
                 </article>
 
-                <section className="top">
-                 
+                <section className="top-section">
+
                     <ul>
                         <li>
                             <h3>Resources</h3>
-                            <a>Usage</a>
-                            <a>Docs</a>
-                            <a>Support</a>
-                            <a>Hardware</a>
+                            <Link to='/'>Usage</Link>
+                            <Link to='/'>Docs</Link>
+                            <Link to='/'>Support</Link>
+                            <Link to='/'>Hardware</Link>
                         </li>
                         <li>
                             <h3>Pricing</h3>
-                            <a>Overview</a>
-                            <a>Flexible Data</a>
-                            <a>High Volume</a>
-                            <a>Enterprise</a>
+                            <Link to='/'>Overview</Link>
+                            <Link to='/'>Flexible Data</Link>
+                            <Link to='/'>High Volume</Link>
+                            <Link to='/'>Enterprise</Link>
                         </li>
                         <li>
                             <h3>Developers</h3>
-                            <a>Forum</a>
-                            <a>Projects</a>
-                            <a>Open Source</a>
-                            <a>GitHub</a>
+                            <Link to='/'>Forum</Link>
+                            <Link to='/'>Projects</Link>
+                            <Link to='/'>Open Source</Link>
+                            <Link to='/'>GitHub</Link>
                         </li>
                         <li>
                             <h3>Company</h3>
-                            <a>About Us</a>
-                            <a>Blog</a>
-                            <a>Partnerships</a>
-                            <a>Careers</a>
+                            <Link to='/'>About Us</Link>
+                            <Link to='/'>Blog</Link>
+                            <Link to='/'>Partnerships</Link>
+                            <Link to='/'>Careers</Link>
                         </li>
                     </ul>
                 </section>
 
-                <section className="bottom">© 2024 sarwar</section>
+                <section className="bottom-section">© 2024 sarwar</section>
             </footer>
 
         </div>

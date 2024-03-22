@@ -44,18 +44,18 @@ footer section {
   padding: 0 50px;
 }
 
-section.top {
+section.top-section {
   padding-top: 30px;
   margin-bottom: 48px;
 }
 
-section.top img {
+section.top-section img {
   display: block;
   height: 30px;
   margin: 0 0 30px;
 }
 
-section.top ul {
+section.top-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -69,7 +69,7 @@ section.top ul {
     width: 70%;
   }
 
-  section.top ul {
+  section.top-section ul {
     padding-right: 10%;
   }
 }
@@ -87,19 +87,19 @@ section.top ul {
     padding: 0 20px 0 24px;
   }
 
-  section.top ul {
+  section.top-section ul {
     grid-template-columns: repeat(4, 1fr);
     padding-right: 0;
   }
 }
 
-section.top ul li a {
+section.top-section ul li a {
   display: block;
   margin-bottom: 10px;
   color: rgb(255 255 255 / 90%);
 }
 
-section.top h3 {
+section.top-section h3 {
   color: rgb(255 255 255 / 40%);
   font-weight: 400;
   text-transform: uppercase;
@@ -107,7 +107,7 @@ section.top h3 {
   letter-spacing: 1px;
 }
 
-section.bottom {
+section.bottom-section {
   padding-top: 10px;
   border-top: 2px solid rgb(255 255 255 / 10%);
   color: rgb(255 255 255 / 40%);
