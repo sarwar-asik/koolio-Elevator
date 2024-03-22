@@ -17,13 +17,15 @@ export default function ElevatorCard({ elevator, currentElevator, setCurrentElev
     // button handler of side arrow icons
     const buttonHandler = (data: IButtonHandler) => {
 
-        setCurrentElevator(data);
-        console.log(currentElevator.title, 'and', elevator.title)
+        // console.log(currentElevator.title, 'and', elevator.title)
         // reusable sound play function
-        playAudioSound()
-        // if (currentElevator.title !== elevator.title) {
-
-        // }
+        // ! condition for correct or wrong select
+        if (currentElevator.title !== elevator.title) {
+            setCurrentElevator(data);
+            playAudioSound("correct")
+        } else {
+            playAudioSound("incorrect")
+        }
 
     };
 
